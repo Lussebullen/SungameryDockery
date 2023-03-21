@@ -2,7 +2,7 @@
 docker build -t sungamimage .  
 
 # Run Image
-docker run --name sungamtest -d -i -t sungamimage /bin/sh
+docker run -d -it --name sungamtest --mount type=bind,source="$(pwd)",target=/app sungamimage
 
 # Enter container in interactive shell
 docker exec -it sungamtest sh
