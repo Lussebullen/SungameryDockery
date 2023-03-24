@@ -2,7 +2,7 @@ FROM python:3.6.15
 
 WORKDIR /app
 
-VOLUME ./test:/app
+COPY . .
 
 RUN apt-get update && apt-get install build-essential cmake --no-install-recommends --yes
 

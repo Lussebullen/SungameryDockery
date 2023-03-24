@@ -24,3 +24,21 @@ pip install cython
 pip install numpy
 
 pip install git+https://github.com/ds4dm/PySCIPOpt.git@ml-branching
+
+############# NEW THINGS
+
+# Extra tree
+pip install scikit-learn==0.20.2
+
+# LambdaMART
+pip install git+https://github.com/jma127/pyltr@78fa0ebfef67d6594b8415aa5c6136e30a5e3395
+
+
+# get SVMrank original source code
+git clone https://github.com/ds4dm/PySVMRank.git
+(cd PySVMRank && wget http://download.joachims.org/svm_rank/current/svm_rank.tar.gz)
+(cd PySVMRank && mkdir src/c)
+(cd PySVMRank && tar -xzf svm_rank.tar.gz -C src/c)
+# Bug fix
+(cd PySVMRank/src/c/svm_light sed -e '34d' svm_hideo.c > svm_hideo.c)
+(cd PySVMRank && pip install .)
