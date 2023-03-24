@@ -40,5 +40,5 @@ git clone https://github.com/ds4dm/PySVMRank.git
 (cd PySVMRank && mkdir src/c)
 (cd PySVMRank && tar -xzf svm_rank.tar.gz -C src/c)
 # Bug fix
-(cd PySVMRank/src/c/svm_light sed -e '34d' svm_hideo.c > svm_hideo.c)
+(cd PySVMRank/src/c/svm_light && sed -e '34d' svm_hideo.c > svm_hideo.c)
 (cd PySVMRank && pip install .)
